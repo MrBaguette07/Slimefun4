@@ -6,6 +6,7 @@ import org.bukkit.event.inventory.InventoryType;
 import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.InventoryView;
 import org.bukkit.inventory.ItemStack;
+import org.bukkit.inventory.MenuType;
 
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
@@ -55,5 +56,14 @@ public class InventoryViewWrapper extends InventoryViewMock {
         if (inventory != null) {
             inventory.setItem(convertSlot(slot), item);
         }
+    }
+
+    @Override
+    public void open() {}
+
+    @Override
+    @Nonnull
+    public MenuType getMenuType() {
+        return MenuType.GENERIC_9X3;
     }
 }
